@@ -514,7 +514,7 @@ module XMLRPC # :nodoc:
       ct = parse_content_type(ct_expected).first
       if ct != "text/xml"
         if ct == "text/html"
-          pp resp
+          pp resp.body
           raise "Wrong content-type (received '#{ct}' but expected 'text/xml'): \n#{data}"
         else
           raise "Wrong content-type (received '#{ct}' but expected 'text/xml')"
